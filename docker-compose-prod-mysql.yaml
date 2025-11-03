@@ -1,0 +1,31 @@
+services:
+  ghost:
+    image: ghost:6-alpine
+    container_name: anotes
+    restart: always
+    ports:
+      - 2368:2368
+    depends_on:
+      - mysql
+    env_file:
+      - ./env/anotes.env
+    environment:
+      url: http://localhost:2368
+      # NODE_ENV=production
+    volumes:
+      - ./content:/var/lib/ghost/content
+
+  mysql:
+    image: mysql:8.4
+    container_name: mysql
+    expose:
+      - 3306:3306
+    restart: always
+    env_file:
+      - ./env/mysql.env
+    volumes:
+      - ./db:/var/lib/mysql
+
+volumes:
+  content:
+  db:

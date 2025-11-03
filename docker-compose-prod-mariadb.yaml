@@ -20,7 +20,7 @@ services:
 
   mariadb:
     image: mariadb:11.4
-    container_name: anotes-db
+    container_name: mariadb
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: strongPass!2024
