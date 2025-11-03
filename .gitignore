@@ -1,5 +1,11 @@
-.DS_Store
-.venv/
-venv/
-temp/
+/.DS_Store
+/.venv/*
+/venv/*
+/temp/*
+/db/*
+!/db/dont_delete_me.txt
+!/db/notes-dev.db
+/content/*
+!/content/dont_delete_me.txt
+
 
